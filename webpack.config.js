@@ -28,7 +28,7 @@ module.exports = {
     })
   ],
 
-  entry: ['./src/client/app.ts'],
+  entry: ['./src/client/main.ts'],
   output: {
     path: __dirname + "/public/",
     publicPath: '/',

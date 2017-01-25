@@ -5,7 +5,12 @@
         "preserveConstEnums": true,
         "sourceMap": true,
         "typeRoots": [ "node_modules/@types" ],
-        "outDir": "./dist/server"
+        "outDir": "./dist/server",
+        "experimentalDecorators": true,
+        "target": "es5",
+        "emitDecoratorMetadata": true,
+        "lib": [ "es2015", "dom" ],
+        "suppressImplicitAnyIndexErrors": true
     },
     "include": [
         "src/server/**/*"

@@ -15,9 +15,7 @@ html {
       position: relative;
       padding-top: 1.6em;
       div#bg {
-         background-image: url("../assets/bg.jpg");
-         background-position: center center;
-         background-size: cover;
+         background-color: black;
          display: block;
          height: 100%;
          width: 100%;
@@ -29,32 +27,41 @@ html {
       }
       div#app {
          @include outer-container;
+         color: white;
+         background-color: black;
          padding: 1.6em;
-         box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.3);
          width: 96%;
          height: 100%;
          max-width: 1200px;
          margin: auto;
          margin-bottom: 1.6em;
-         background-color: white;
          img {
-            @include span-columns(3 of 12);
+          margin: auto;
+          display: block;
+          width: 164px;
          }
          h1 {
-            @include span-columns(9 of 12);
+            @include span-columns(12 of 12);
             @include omega;
-            font-family: 'Lato', serif;
-            font-size: modular-scale(4);
-         }
-          h3 {
-            @include span-columns(9 of 12);
-            @include omega;
-            font-family: 'Soulmaker in the Mountains', serif;
-            font-size: modular-scale(5);
             margin-top: 1em;
-          }
-
+            font-family: 'Trajan Pro', serif;
+            font-size: modular-scale(4);
+            text-align: center;
+            margin-bottom: 1em;
+         }
+         p {
+          font-family: 'Cabin', sans-serif;
+          text-align: center;
+          font-size: modular-scale(1);
+          line-height: 1.5em;
+          width: 80%;
+          margin: auto;
+          margin-bottom: 1em;
+          display: block;
+          letter-spacing: 3px;
          }
       }
+         
+  }
 
 }
