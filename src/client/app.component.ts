@@ -12,7 +12,7 @@ import Order from './order.class';
   <div id="app">
      <img src="img/main.png"/>
      <h1>Trump's Orders</h1>
-     <p>In his first three days, Trump signed more executive orders than any other US President signed in their first week.</p>
+     <p>In his first three days, Trump signed more executive orders than any other US President has signed in their first week.</p>
      <p>Mr. President, we are watching.</p>
      <div class="orders">
       <!-- <trump-order *ngFor="let order of orders"
