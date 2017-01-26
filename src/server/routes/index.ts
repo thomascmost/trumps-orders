@@ -10,6 +10,10 @@ module Route {
       //render page
         res.sendFile('index.html', {root: __dirname + '../public/'}) //Our main application, including client.js, is hooked into index.html
     }
+    public static page(req: express.Request, res: express.Response, next: express.NextFunction) {
+      //render page
+        res.sendFile('index.html', {root: __dirname + '../../public/'}) //Our main application, including client.js, is hooked into index.html
+    }
   }
 }
 
