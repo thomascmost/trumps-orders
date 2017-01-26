@@ -7,18 +7,18 @@ import { Component } from '@angular/core';
 import { Order } from './order';
 
 @Component({
-  selector: 'trumps-orders-app',
+  selector: 'sources-page',
   template: `
-  <div class="app">
-     <img src="img/main.png"/>
-     <home-page></home-page>
-     <to-footer></to-footer>
+  <div class="page">
+     <h1>Sources</h1>
   </div>`
 })
 
-export class AppComponent {
-  orders: Order[];
+export class SourcesPageComponent {
   error: any;
   showNgFor = false; 
+  constructor ()
+  {
+  }
 }
 
