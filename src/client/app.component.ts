@@ -14,6 +14,7 @@ import { Order } from './order';
      <router-outlet></router-outlet>
      <to-footer></to-footer>
   </div>`
+  
 })
 
 export class AppComponent {

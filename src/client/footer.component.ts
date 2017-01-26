@@ -9,6 +9,7 @@ import { Component } from '@angular/core';
   template: `
    <footer>
 
+   <a routerLink="/">Home</a>
    <a routerLink="/sources">Sources</a>
    <a routerLink="/disposition">Dispositions</a>
       Created by <a href="https://www.twitter.com/thomascmost" target="_blank">Thomas Constantine Moore</a>
