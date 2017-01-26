@@ -19,6 +19,9 @@ import { Order } from './order';
        <div class="source">
         Fox News: <a target="_blank" href="http://www.foxnews.com/politics/2017/01/24/list-trumps-executive-orders.html">The 12 executive actions Trump has signed (so far)</a>
        </div>
+       <div class="source">
+        Fox News: <a target="_blank" href="http://www.foxnews.com/politics/2017/01/24/list-trumps-executive-orders.html">List of Trump's executive orders</a>
+       </div>
      </div>
   </div>`
 })
