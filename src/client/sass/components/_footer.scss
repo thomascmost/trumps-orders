@@ -2,4 +2,10 @@ footer {
    a {
       margin-right: 2em;
    }
+   .credit {
+      display: block;
+      @include media(600px) {
+         display: inline;
+      }
+   }
 }
