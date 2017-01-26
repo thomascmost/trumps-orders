@@ -23,6 +23,9 @@ import { Order } from './order';
        <div class="source">
         Fox News: <a target="_blank" href="http://www.foxnews.com/politics/2017/01/24/list-trumps-executive-orders.html">List of Trump's executive orders</a>
        </div>
+       <div class="source">
+        Federal Register: <a target="_blank" href="https://www.federalregister.gov/executive-orders">(updated automatically as dispositions filed)</a>
+       </div>
      </div>
   </div>`
 })
