@@ -10,7 +10,7 @@ import { Order } from './order';
   selector: 'sources-page',
   template: `
   <div class="page">
-     <h1>Sources</h1>
+     <h2>Sources</h2>
      <div class="sources">
        <div class="source">
         PBS: <a target="_blank" href="http://www.pbs.org/newshour/rundown/10-executive-actions-trump-signed-far/">The 12 executive actions Trump has signed (so far)</a> -

@@ -13,7 +13,7 @@ import { OrdersDispositionService } from './orders.service'
    providers: [OrdersDispositionService],
    template: `
    <div class="page">
-       <h1>Trump's Orders</h1>
+       <h2>Trump's Orders</h2>
        <p>Executive Order dispositions retrieved from the Federal Register may take several days if not weeks to update.</p>
        <div class="orders">
          <trump-order *ngFor="let order of orders; let i = index"
