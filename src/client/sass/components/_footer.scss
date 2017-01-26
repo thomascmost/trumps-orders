@@ -4,8 +4,10 @@ footer {
    }
    .credit {
       display: block;
+      margin-top: 1em;
       @include media(600px) {
          display: inline;
+         margin-top: 0;
       }
    }
 }
