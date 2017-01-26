@@ -22,8 +22,11 @@ var env = process.env.NODE_ENV || 'development';
 
 // Routes
 
+app.get('/sources', routes.Index.index);
+app.get('/disposition', routes.Index.index);
+app.get('/*', routes.Index.index);
 app.get('/', routes.Index.index);
-app.get('/:pageCalled', routes.Index.index);
+app.get('*', routes.Index.index);
 
 app.listen(app.get('port'), function() {
   console.log('app is running on port', app.get('port'));
