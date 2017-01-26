@@ -20,6 +20,7 @@ import { Order } from './order';
           [order]="order">
        </trump-order>
      </div>
+     <to-footer></to-footer>
   </div>`
 })
 
