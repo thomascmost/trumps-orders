@@ -1,7 +1,7 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule, JsonpModule } from '@angular/http';
-import { JsonpModule } from '@angular/http';
+import { RouterModule }   from '@angular/router';
 
 import { AppComponent }  from './app.component';
 import { TrumpOrderComponent }  from './trump-order.component';
@@ -11,7 +11,28 @@ import { DispositionPageComponent } from './disposition-page.component';
 import { SourcesPageComponent } from './sources-page.component';
 
 @NgModule({
-  imports:      [ BrowserModule, HttpModule, JsonpModule ],
+  imports:      [ 
+      BrowserModule, 
+      HttpModule, 
+      JsonpModule,
+
+      RouterModule.forRoot([
+        {
+          path: '',
+          component: HomePageComponent
+        },
+
+        {
+          path: 'sources',
+          component: SourcesPageComponent
+        },
+
+        {
+          path: 'disposition',
+          component: DispositionPageComponent
+        }
+      ]) 
+  ],
   declarations: [ AppComponent, 
                   TrumpOrderComponent, 
                   TOFooterComponent,
@@ -20,4 +41,7 @@ import { SourcesPageComponent } from './sources-page.component';
                   SourcesPageComponent ],
   bootstrap:    [ AppComponent ]
 })
+
+
+
 export class AppModule { }

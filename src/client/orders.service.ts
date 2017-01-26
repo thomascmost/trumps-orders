@@ -26,11 +26,12 @@ export class OrdersDispositionService {
         return this._jsonp.get(this.url)
           .map(function(res: Response){
               let json = res.json();
-              let orders = []
+              let orders: Order[] = []
               orders.push(new Order(json.title, ""))
               return orders;
           }).catch(function(error: any){return Observable.throw(error);
         });
     }
+  }
 
 //https://www.federalregister.gov/documents/search.json?conditions%5Bcorrection%5D=0&conditions%5Bpresident%5D=&conditions%5Bpresidential_document_type_id%5D=2&conditions%5Btype%5D=PRESDOCU&fields%5B%5D=citation&fields%5B%5D=document_number&fields%5B%5D=end_page&fields%5B%5D=executive_order_notes&fields%5B%5D=executive_order_number&fields%5B%5D=html_url&fields%5B%5D=pdf_url&fields%5B%5D=publication_date&fields%5B%5D=signing_date&fields%5B%5D=start_page&fields%5B%5D=title&fields%5B%5D=full_text_xml_url&fields%5B%5D=body_html_url&fields%5B%5D=json_url&order=executive_order_number&per_page=1000

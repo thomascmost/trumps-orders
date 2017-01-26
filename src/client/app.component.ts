@@ -11,7 +11,7 @@ import { Order } from './order';
   template: `
   <div class="app">
      <img src="img/main.png"/>
-     <home-page></home-page>
+     <router-outlet></router-outlet>
      <to-footer></to-footer>
   </div>`
 })
