@@ -1,0 +1,55 @@
+.orders {
+   margin-top: 2em;
+   .trump-order {
+      @include span-columns(12 of 12);
+      margin-bottom: 1em;
+
+      img {
+         width: 64px;
+         margin: 0;
+         float: left;
+         @include media(800px)
+         {
+            width: 100px;
+         }
+      }
+      .number {
+         float: left;
+         font-size: modular-scale(2);
+         font-family: 'Trajan Pro', sans-serif;
+         line-height: 64px;
+         margin: 0 1em;
+         width: 60px;
+         @include media(800px)
+         {
+            font-size: modular-scale(3);
+            line-height: 100px;
+            margin: 0 1em 0 .8em;
+            width: 100px;
+         }
+      }
+      .contents {
+         width: 100%;
+         float: left;
+         @include media(500px)
+         {
+            width: calc(100% - 200px);
+         }
+         @include media(800px)
+         {
+            width: calc(100% - 300px);
+         }
+      }
+      .name {
+         margin-top: .5em;
+         @include span-columns(12 of 12);
+         font-size: modular-scale(2);
+      }
+      .description {
+         @include span-columns(12 of 12);
+         margin-top: .5em;
+         line-height: 1.5em;
+
+      }
+   }
+}
