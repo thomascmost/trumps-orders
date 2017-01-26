@@ -87,12 +87,17 @@ html {
             font-size: modular-scale(-1);
 
          }
-
-         .source {
-          font-size: modular-scale(1);
-          margin-bottom: 1.5em;
-         }
-
+         .sources {
+          margin-top: 2em;
+          display: block;
+          height: 600px;
+           
+           .source {
+            display: block;
+            font-size: modular-scale(1);
+            margin-bottom: 1.5em;
+           }
+          }
       }
          
   }

@@ -1,5 +1,6 @@
 .orders {
    margin-top: 2em;
+   min-height: 400px;
    .trump-order {
       @include span-columns(12 of 12);
       margin-bottom: 1em;
