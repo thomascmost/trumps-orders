@@ -40,13 +40,13 @@ export class OrdersDispositionService {
         });
     }
 
-    getFullText(url): Observable<string> {
+    getFullText(url:string): Observable<string> {
       return this._jsonp.get(url + "?callback=JSONP_CALLBACK")
       .map(function(res: Response){
               let json = res.json();
 
               return json;
           }).catch(function(error: any){return Observable.throw(error);
-        });
+        }); 
     }
   }
