@@ -23,7 +23,7 @@ var env = process.env.NODE_ENV || 'development';
 // Routes
 
 app.get('/sources', routes.Index.page);
-app.get('/disposition', routes.Index.page);
+app.get('/dispositions', routes.Index.page);
 app.get('/', routes.Index.index);
 
 app.listen(app.get('port'), function() {

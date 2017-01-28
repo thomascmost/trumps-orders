@@ -28,7 +28,7 @@ import { SourcesPageComponent } from './sources-page.component';
         },
 
         {
-          path: 'disposition',
+          path: 'dispositions',
           component: DispositionPageComponent
         }
       ]) 
