@@ -19,19 +19,22 @@ export class OrdersDispositionService {
   private url: string;
    constructor(_jsonp: Jsonp) {
      this._jsonp = _jsonp;
-     this.url = "https://www.federalregister.gov/api/v1/documents/2017-01799?callback=JSONP_CALLBACK"
+     this.url = "https://www.federalregister.gov/api/v1/documents?conditions[correction]=0&conditions[president]=donald-trump&conditions[presidential_document_type_id]=2&conditions[type]=PRESDOCU&fields[]=citation&fields[]=document_number&fields[]=end_page&fields[]=executive_order_notes&fields[]=executive_order_number&fields[]=html_url&fields[]=pdf_url&fields[]=publication_date&fields[]=signing_date&fields[]=start_page&fields[]=title&fields[]=full_text_xml_url&fields[]=body_html_url&order=executive_order_number&per_page=1000&callback=JSONP_CALLBACK"
    }
 
      getOrders() : Observable<Order[]> {
         return this._jsonp.get(this.url)
           .map(function(res: Response){
               let json = res.json();
+              let jsonOrders= json.results
               let orders: Order[] = []
-              orders.push(new Order(json.title, ""))
+              for (let i=0; i<jsonOrders.length; i++)
+              {
+                orders.push(new Order(jsonOrders[i].title, ""))
+              }
               return orders;
           }).catch(function(error: any){return Observable.throw(error);
         });
     }
   }
 
-//https://www.federalregister.gov/documents/search.json?conditions%5Bcorrection%5D=0&conditions%5Bpresident%5D=&conditions%5Bpresidential_document_type_id%5D=2&conditions%5Btype%5D=PRESDOCU&fields%5B%5D=citation&fields%5B%5D=document_number&fields%5B%5D=end_page&fields%5B%5D=executive_order_notes&fields%5B%5D=executive_order_number&fields%5B%5D=html_url&fields%5B%5D=pdf_url&fields%5B%5D=publication_date&fields%5B%5D=signing_date&fields%5B%5D=start_page&fields%5B%5D=title&fields%5B%5D=full_text_xml_url&fields%5B%5D=body_html_url&fields%5B%5D=json_url&order=executive_order_number&per_page=1000
