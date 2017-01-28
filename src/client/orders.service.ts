@@ -19,7 +19,7 @@ export class OrdersDispositionService {
   private url: string;
    constructor(_jsonp: Jsonp) {
      this._jsonp = _jsonp;
-     this.url = "https://www.federalregister.gov/api/v1/documents?conditions[correction]=0&conditions[president]=donald-trump&conditions[presidential_document_type_id]=2&conditions[type]=PRESDOCU&fields[]=citation&fields[]=document_number&fields[]=end_page&fields[]=executive_order_notes&fields[]=executive_order_number&fields[]=html_url&fields[]=pdf_url&fields[]=publication_date&fields[]=signing_date&fields[]=start_page&fields[]=title&fields[]=full_text_xml_url&fields[]=body_html_url&order=executive_order_number&per_page=1000&callback=JSONP_CALLBACK"
+     this.url = "https://www.federalregister.gov/api/v1/documents?conditions[correction]=0&conditions[president]=donald-trump&conditions[presidential_document_type_id]=2&conditions[type]=PRESDOCU&fields[]=citation&fields[]=document_number&fields[]=end_page&fields[]=executive_order_notes&fields[]=executive_order_number&fields[]=html_url&fields[]=pdf_url&fields[]=publication_date&fields[]=signing_date&fields[]=start_page&fields[]=title&fields[]=full_text_xml_url&fields[]=json_url&fields[]=body_html_url&order=executive_order_number&per_page=1000&callback=JSONP_CALLBACK"
    }
 
      getOrders() : Observable<Order[]> {
@@ -30,11 +30,23 @@ export class OrdersDispositionService {
               let orders: Order[] = []
               for (let i=0; i<jsonOrders.length; i++)
               {
-                orders.push(new Order(jsonOrders[i].title, ""))
+                console.log(jsonOrders[i]);
+                let eo = jsonOrders[i]
+                let description = "Executive Order " + eo.executive_order_number + ": Signed " + eo.signing_date
+                orders.push(new Order(eo.title, description,eo.body_html_url))
               }
               return orders;
           }).catch(function(error: any){return Observable.throw(error);
         });
     }
-  }
 
+    getFullText(url): Observable<string> {
+      return this._jsonp.get(url + "?callback=JSONP_CALLBACK")
+      .map(function(res: Response){
+              let json = res.json();
+
+              return json;
+          }).catch(function(error: any){return Observable.throw(error);
+        });
+    }
+  }

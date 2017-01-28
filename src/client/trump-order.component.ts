@@ -17,6 +17,7 @@ import { Order } from './order';
       <div class="contents">
          <h4 class="name">{{order.name}}</h4>
          <h6 class="description">{{order.description}}</h6>
+         <a target="_blank" *ngIf="order.fullTextUrl" href="{{order.fullTextUrl}}">Full Text</a>
       </div>
    </div>`
 })
