@@ -14,7 +14,8 @@ import { OrdersDispositionService } from './orders.service'
    template: `
    <div class="page">
        <h2>Trump's Orders</h2>
-       <p>Executive Order dispositions retrieved from the Federal Register may take several days if not weeks to update.</p>
+       <p>This list reflects only those executive actions which are filed as executive orders, meaning they have the full force of the law behind them.</p>
+       <p>Dispositions retrieved from the Federal Register may take several days to update.</p>
        <div class="orders">
          <trump-order *ngFor="let order of orders; let i = index"
                [index]="i"
