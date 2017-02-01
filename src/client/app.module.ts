@@ -28,7 +28,7 @@ import { SourcesPageComponent } from './sources-page.component';
         },
 
         {
-          path: 'dispositions',
+          path: 'executive-orders',
           component: DispositionPageComponent
         }
       ]) 

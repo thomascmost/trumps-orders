@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
    <footer>
 
    <a routerLink="/">Home</a>
-   <a routerLink="/dispositions">Dispositions</a>
+   <a routerLink="/executive-orders">Dispositions</a>
    <a routerLink="/sources">Sources</a>
    <div class="credit">Created by <a href="https://www.twitter.com/thomascmost" target="_blank">Thomas Constantine Moore</a></div>
    </footer>`
