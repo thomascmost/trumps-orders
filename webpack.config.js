@@ -7,6 +7,9 @@ var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 module.exports = {
   resolve: {
+    alias: {
+      moment: 'moment/moment.js',
+    },
     extensions: ['', '.scss', '.ts', '.js']
   },
 

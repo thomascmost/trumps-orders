@@ -29,7 +29,7 @@ import { OrdersDispositionService } from './orders.service'
 
 export class HomePageComponent {
    private ordersService: OrdersDispositionService
-   orders: Order[];
+   orders: ExecAction[];
    error: any;
    showNgFor = false; 
    constructor (private OrdersDispositionService: OrdersDispositionService)
@@ -45,7 +45,14 @@ export class HomePageComponent {
       // Get all comments
       this.ordersService.getActions()
          .subscribe(
-            orders => this.orders = orders, //Bind to view
+            orders => this.orders = orders.sort(function(a: ExecAction, b: ExecAction){
+              var keyA = a.date,
+                  keyB = b.date
+              // Compare the 2 dates
+              if(keyB.isAfter(keyA)) return -1;
+              if(keyA.isAfter(keyB)) return 1;
+              return 0;
+          }), //Bind to view
             err => {
                // Log errors if any
                console.log(err);

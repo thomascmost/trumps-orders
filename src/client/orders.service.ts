@@ -7,6 +7,7 @@ import {Observable} from 'rxjs/Rx';
 import { Order } from './order';
 import { ExecAction } from './exec-action';
 
+import * as moment from 'moment';
 
 // Import RxJs required methods
 import 'rxjs/add/operator/map';
@@ -35,8 +36,8 @@ export class OrdersDispositionService {
               {
                 console.log(jsonOrders[i]);
                 let eo = jsonOrders[i]
-                let description = "Executive Order " + eo.executive_order_number + ": Signed " + eo.signing_date
-                orders.push(new Order(eo.title, description,eo.body_html_url))
+                let description = "Executive Order " + eo.executive_order_number + ": Signed " + moment(eo.signing_date).format('ll')
+                orders.push(new Order(eo.title, description,eo.body_html_url, eo.signing_date))
               }
               return orders;
           }).catch(function(error: any){return Observable.throw(error);
@@ -53,8 +54,8 @@ export class OrdersDispositionService {
               {
                 console.log(jsonOrders[i]);
                 let eo = jsonOrders[i]
-                let description = (eo.executive_order_number?("Executive Order " + eo.executive_order_number +": "):"") + (eo.signing_date?("Signed " + eo.signing_date):"") 
-                actions.push(new ExecAction(eo.title, description,eo.body_html_url))
+                let description = (eo.executive_order_number?("Executive Order " + eo.executive_order_number +": "):"") + (eo.signing_date?("Signed " + moment(eo.signing_date || eo.publication_date).format('ll')):"") 
+                actions.push(new ExecAction(eo.title, description, eo.body_html_url, eo.signing_date || eo.publication_date))
               }
               return actions;
           }).catch(function(error: any){return Observable.throw(error);
