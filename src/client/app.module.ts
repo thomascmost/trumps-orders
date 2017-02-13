@@ -19,17 +19,11 @@ import { SourcesPageComponent } from './sources-page.component';
       RouterModule.forRoot([
         {
           path: '',
-          component: HomePageComponent
-        },
-
-        {
-          path: 'sources',
-          component: SourcesPageComponent
-        },
-
-        {
-          path: 'executive-orders',
           component: DispositionPageComponent
+        },
+        {
+          path: 'all-actions',
+          component: HomePageComponent
         }
       ]) 
   ],

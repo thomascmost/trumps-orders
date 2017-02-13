@@ -37,6 +37,8 @@ export class DispositionPageComponent {
    ngOnInit() {
       // Load comments
       this.loadOrders()
+      
+      window.scrollTo(0,0);
    }
 
    loadOrders() {
