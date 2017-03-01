@@ -5,12 +5,27 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
+var styleLoaders = [
+  {
+    loader: 'css-loader',
+    options: {
+      sourceMap: true
+    }
+  },
+  {
+    loader: 'sass-loader',
+    options: {
+      sourceMap: true
+    }
+  }
+]
+
 module.exports = {
   resolve: {
     alias: {
       moment: 'moment/moment.js',
     },
-    extensions: ['', '.scss', '.ts', '.js']
+    extensions: ['.scss', '.ts', '.js']
   },
 
   plugins: [
@@ -41,7 +56,7 @@ module.exports = {
   devtool: 'source-map',
 
   module: {
-    loaders: [
+    rules: [
       { test: /\.jpg$/,    loader: "url-loader?limit=10000&minetype=image/jpg" },
       {
        test: /\.js$/,
@@ -54,19 +69,16 @@ module.exports = {
       },
       {
           test: /\.scss$/,
-          loader: ExtractTextPlugin.extract(
-              'style-loader', // The backup style loader
-              'css-loader?sourceMap!sass-loader?sourceMap'
-          )
+          loader: ExtractTextPlugin.extract({
+              fallbackLoader: 'style-loader', // The backup style loader
+              loader: styleLoaders
+          })
       },
-            {
-                test: /\.(eot|svg|ttf|woff|woff2)$/,
-                loader: 'file?name=fonts/[name].[ext]'
-            }
-    ],
-    sassLoader: {
-      includePaths: ["./src/client/sass/"]
-    }
+      {
+          test: /\.(eot|svg|ttf|woff|woff2)$/,
+          loader: 'file?name=fonts/[name].[ext]'
+      }
+    ]
   },
 
   devServer: {

@@ -54,9 +54,12 @@
     "tslint": "4.1.1",
     "typescript": "2.0.0",
     "url-loader": "0.5.7",
-    "webpack": "1.14.0",
     "webpack-dev-server": "1.16.2",
     "webpack-livereload-plugin": "0.9.0",
     "zone.js": "^0.7.4"
+  },
+  "devDependencies": {
+    "extract-text-webpack-plugin": "2.0.0-beta.4",
+    "webpack": "2.1.0-beta.25"
   }
 }
