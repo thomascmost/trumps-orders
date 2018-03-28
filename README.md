@@ -1,7 +1,7 @@
 # Trump's Orders
 A simple application that shows executive actions from the Federal Register's API
 
-##Stack
+## Stack
 - NodeJS
 - Express
 - TypeScript
